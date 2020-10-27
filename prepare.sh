@@ -1,6 +1,6 @@
 #!/bin/bash
 yum-config-manager --enable rhui-REGION-rhel-server-extras
-yum update
+yum -y update
 yum -y install docker
 chkconfig docker on
 sed -i -e 's/slave/shared/g' /lib/systemd/system/docker.service
