@@ -1,4 +1,4 @@
-for mount in $(mount | grep tmpfs | grep '/var/lib/kubelet' | awk '{​ print $3 }​') /var/lib/kubelet /var/lib/rancher; do umount $mount; done
+for mount in $(mount | grep tmpfs | grep '/var/lib/kubelet' | awk '{ print $3 }') /var/lib/kubelet /var/lib/rancher; do umount $mount; done
 docker stop $(docker ps -aq) --force
 docker rm -f $(docker ps -qa) --force
 # docker image rm $(docker image ls -q) --force
